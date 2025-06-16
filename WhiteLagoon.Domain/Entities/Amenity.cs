@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace WhiteLagoon.Domain.Entities
 {
-    public class VillaNumber
+    public class Amenity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Display(Name = "Villa Number")]
-        public int Villa_Number { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public string? Description { get; set; }
 
         [ForeignKey("Villa")]
         public int VillaId { get; set; }
         [ValidateNever]
         public Villa Villa { get; set; }
-        public string? SpecialDetails { get; set; }
     }
 }
